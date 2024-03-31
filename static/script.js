@@ -5,6 +5,20 @@ flatpickr("#time", {
   time_24hr: true, // Use 24-hour format
 });
 
+function getSessionFromTime(hour) {
+  // Determine session based on hour
+  if (hour >= 0 && hour < 6) {
+      return 4;
+  } else if (hour >= 6 && hour < 12) {
+      return 1;
+  } else if (hour >= 12 && hour < 18) {
+      return 2;
+  } else {
+      return 3;
+  }
+}
+
+
 document.getElementById("predictButton").addEventListener("click", function () {
   var month = parseInt(document.getElementById("month").value);
   var year = parseInt(document.getElementById("year").value);
@@ -13,7 +27,7 @@ document.getElementById("predictButton").addEventListener("click", function () {
   var timeParts = timeInput.split(":");
   var hours = parseInt(timeParts[0]);
   var minutes = parseInt(timeParts[1]);
-  var sessionEncoded = parseInt(document.getElementById("session").value);
+  var sessionEncoded = getSessionFromTime(hours);
   var districtEncoded = parseInt(document.getElementById("district").value);
   var locX = parseFloat(document.getElementById("locX").value);
   var locY = parseFloat(document.getElementById("locY").value);
