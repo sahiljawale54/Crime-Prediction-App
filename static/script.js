@@ -8,16 +8,35 @@ flatpickr("#time", {
 function getSessionFromTime(hour) {
   // Determine session based on hour
   if (hour >= 0 && hour < 6) {
-      return 4;
+    return 4;
   } else if (hour >= 6 && hour < 12) {
-      return 1;
+    return 1;
   } else if (hour >= 12 && hour < 18) {
-      return 2;
+    return 2;
   } else {
-      return 3;
+    return 3;
   }
 }
 
+let map;
+
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
+
+  var baltimore = { lat: 39.299236, lng: -76.607716 }; // Baltimore's coordinates
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: baltimore,
+    zoom: 12, // Zoom level for better visibility
+  });
+
+  google.maps.event.addListener(map, "click", function (event) {
+    console.log("Map clicked");
+    document.getElementById("locX").value = event.latLng.lat();
+    document.getElementById("locY").value = event.latLng.lng();
+  });
+}
+
+initMap();
 
 document.getElementById("predictButton").addEventListener("click", function () {
   var month = parseInt(document.getElementById("month").value);

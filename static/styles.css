@@ -3,19 +3,32 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f0f0f0;
+  background-image: url("/static/images/tape.svg");
+  background-size: auto;
+  background-position: center;
 }
 
 .container {
+  font-size: large;
   width: 80vw;
-  margin: 50px auto;
+  margin-inline: auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.652);
 }
-
+.header {
+  display: flex;
+  justify-content: center;
+}
+.robber {
+  display: inline;
+  width: 100px;
+  height: auto;
+}
 h1 {
   text-align: center;
+  display: inline;
 }
 
 .half-size {
@@ -63,6 +76,11 @@ button {
 button:hover {
   background-color: #45a049;
 }
+#map {
+  height: 400px;
+  width: 100%;
+  margin: 10px;
+}
 
 /* Custom styling for flatpickr time picker */
 /*.flatpickr-time {
@@ -94,8 +112,7 @@ button:hover {
 /* Styling for flatpickr time picker dropdown items on hover */
 /* .flatpickr-time.flatpickr-dropdown div:hover {
   background-color: #f8f9fa;
-} */ 
-
+} */
 
 #predictionResult {
   font-size: medium;

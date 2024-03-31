@@ -3,7 +3,7 @@ from flask_cors import CORS
 import pandas as pd
 import pickle
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 # Load the trained model
 with open('CrimePredictionModel.pkl', 'rb') as file:
