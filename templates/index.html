@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crime Prediction Model</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Crime Prediction Model</h1>
+      <form id="predictionForm" method="post">
+        <div class="input-group">
+          <label for="dayOfWeek">Day of Week:</label>
+          <select id="dayOfWeek" required>
+            <option value="">Select Day</option>
+            <option value="2">Monday</option>
+            <option value="3">Tuesday</option>
+            <option value="4">Wednesday</option>
+            <option value="5">Thursday</option>
+            <option value="6">Friday</option>
+            <option value="7">Saturday</option>
+            <option value="1">Sunday</option>
+          </select>
+        </div>
+        <div class="input-row">
+          <div class="input-group half-size">
+            <label for="month">Month:</label>
+            <select id="month" required>
+              <option value="">Select Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+          <div class="input-group half-size">
+            <label for="year">Year:</label>
+            <select id="year" required>
+              <option value="">Select Year</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="input-group half-size">
+            <label for="time">Time:</label>
+            <input type="number" id="time" required />
+          </div>
+          <div class="input-group half-size">
+            <label for="session">Session:</label>
+            <select id="session" required>
+              <option value="">Select Session</option>
+              <option value="1">Morning</option>
+              <option value="2">Afternoon</option>
+              <option value="3">Evening</option>
+              <option value="4">Night</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="input-group half-size">
+            <label for="district">District:</label>
+            <select id="district" required>
+              <option value="">Select District</option>
+              <option value="7">North District (ND)</option>
+              <option value="10">South District (SD)</option>
+              <option value="13">Southwest District (SW)</option>
+              <option value="11">Southeast District (SE)</option>
+              <option value="2">East District (ED)</option>
+              <option value="15">West District (WD)</option>
+              <option value="0">Central District (CD)</option>
+              <option value="9">Northwest District (NW)</option>
+              <option value="1">Centralwest District (CW)</option>
+              <option value="8">Northeast District (NE)</option>
+              <option value="14">True District (TRU)</option>
+            </select>
+          </div>
+          <div class="input-group half-size">
+            <label for="locX">Location X:</label>
+            <input type="number" id="locX" required />
+          </div>
+          <div class="input-group half-size">
+            <label for="locY">Location Y:</label>
+            <input type="number" id="locY" required />
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="description">Description:</label>
+          <select id="description" required>
+            <option value="">Select Description</option>
+            <option value="8">Auto Theft</option>
+            <option value="1">Alarm Calls</option>
+            <option value="7">Auto Accident</option>
+            <option value="17">Illegal Drugs/Narcotics</option>
+            <option value="18">Other Incidents</option>
+            <option value="10">Burglary</option>
+            <option value="21">Suspicious Incidents</option>
+            <option value="5">Assault</option>
+            <option value="16">Hit Incidents</option>
+            <option value="23">Traffic Issues</option>
+            <option value="19">Robbery</option>
+            <option value="2">Armed Incidents</option>
+            <option value="22">Threats</option>
+            <option value="20">Runaway/Missing</option>
+            <option value="0">Accident</option>
+            <option value="9">Bike Larceny</option>
+            <option value="14">Gambling</option>
+            <option value="3">Armed Incidents</option>
+            <option value="11">Child Related</option>
+            <option value="13">Driving Related</option>
+            <option value="6">Attempted Crime</option>
+            <option value="15">Harassment</option>
+            <option value="12">Disputes</option>
+            <option value="4">Asking for Help</option>
+            <option value="24">Reckless Driver</option>
+          </select>
+        </div>
+        <button type="button" id="predictButton">Predict Crime</button>
+      </form>
+      <div id="predictionResult"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

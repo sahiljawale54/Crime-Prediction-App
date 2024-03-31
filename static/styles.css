@@ -1,0 +1,127 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 80vw;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.half-size {
+  width: calc(50% - 50px); /* Adjust margin as needed */
+  margin-right: 10px;
+}
+
+.input-group {
+  justify-content: space-around;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group select,
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Custom styling for flatpickr time picker */
+/*.flatpickr-time {
+  width: 100%;
+  border: 1px solid #ced4da;
+  display: block;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}*/
+
+/* Styling for flatpickr time picker dropdown */
+/* .flatpickr-time.flatpickr-dropdown {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  z-index: 9999;
+  position: absolute;
+}*/
+
+/* Styling for flatpickr time picker dropdown items */
+/* .flatpickr-time.flatpickr-dropdown div {
+  padding: 0.25rem 0;
+  cursor: pointer;
+} */
+
+/* Styling for flatpickr time picker dropdown items on hover */
+/* .flatpickr-time.flatpickr-dropdown div:hover {
+  background-color: #f8f9fa;
+} */ 
+
+
+#predictionResult {
+  font-size: medium;
+  font-weight: 600;
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+@media screen and (max-width: 600px) {
+  .input-group {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .input-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .input-row .input-group {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+  .half-size {
+    flex: 1 1 calc(50% - 5px);
+    margin-right: 10px;
+  }
+}
