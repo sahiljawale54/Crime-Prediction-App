@@ -124,6 +124,17 @@ button:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+#resetbutton {
+  background-color: gray;
+} 
+#map-message {
+  padding: 10px;
+  color: red;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+}
 @media screen and (max-width: 600px) {
   .input-group {
     width: 100%;

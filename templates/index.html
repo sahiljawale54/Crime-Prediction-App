@@ -98,7 +98,16 @@
             </select>
           </div>
         </div>
-        <div id="map"></div>
+        <div id="map-container">
+          <div id="map-message">
+            Click on MAP to select Location Co-&nbsp;ordinates
+          </div>
+          <div id="currentdis">
+            Current Selected District:
+            <span class="curr"><b>Baltimore</b></span>
+          </div>
+          <div id="map"></div>
+        </div>
         <div class="input-row">
           <!-- <label>X Coordinate: </label><span id="LocX"></span><br>
         <label>Y Coordinate: </label><span id="LocY"></span> -->
@@ -142,7 +151,14 @@
             <option value="24">Reckless Driver</option>
           </select>
         </div>
-        <button type="button" id="predictButton">Predict Crime</button>
+        <div class="input-row">
+          <div class="input-group half-size">
+            <button type="reset" id="resetbutton">Reset Form</button>
+          </div>
+          <div class="input-group half-size">
+            <button type="button" id="predictButton">Predict Crime</button>
+          </div>
+        </div>
       </form>
       <div id="predictionResult"></div>
     </div>
