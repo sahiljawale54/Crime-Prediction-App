@@ -57,6 +57,19 @@ function getDistrictCenter(district) {
     return { lat: 39.299236, lng: -76.607716 };
   }
 }
+var map = L.map("map").setView([39.299236, -76.607716], 13);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+map.on("click", function (e) {
+  var lat = e.latlng.lat;
+  var lng = e.latlng.lng;
+  document.getElementById("locX").value = lat;
+  document.getElementById("locY").value = lng;
+});
 
 document.getElementById("district").addEventListener("change", function () {
   var selectedDistrict = this.value;
@@ -67,28 +80,13 @@ document.getElementById("district").addEventListener("change", function () {
   } else {
     document.querySelector(".curr").innerHTML = "<b>Baltimore</b>";
   }
+
   var districtCenter = getDistrictCenter(selectedDistrict);
   if (districtCenter) {
-    map.setCenter(districtCenter);
+    map.setView(districtCenter);
   }
 });
-let map;
 
-async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
-
-  var baltimore = { lat: 39.299236, lng: -76.607716 }; // Baltimore's coordinates
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: baltimore,
-    zoom: 13, // Zoom level for better visibility
-  });
-
-  google.maps.event.addListener(map, "click", function (event) {
-    console.log("Map clicked");
-    document.getElementById("locX").value = event.latLng.lat();
-    document.getElementById("locY").value = event.latLng.lng();
-  });
-}
 
 document
   .getElementById("predictionForm")
@@ -100,12 +98,12 @@ document
     inputs.forEach(function (input) {
       input.value = "";
     });
-    initMap();
+    map.setView([39.299236, -76.607716], 13);
     document.querySelector(".curr").innerHTML = "<b>Baltimore</b>";
     document.getElementById("predictionResult").innerText = "";
   });
 
-initMap();
+
 
 document.getElementById("predictButton").addEventListener("click", function () {
   var month = parseInt(document.getElementById("month").value);

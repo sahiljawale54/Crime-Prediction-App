@@ -19,16 +19,23 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get data from the request
-    data = request.json
+    try:
+        data = request.json
     
-    # Convert data to DataFrame with feature names
-    input_data = pd.DataFrame([data], columns=feature_names)
+        # Convert data to DataFrame with feature names
+        input_data = pd.DataFrame([data], columns=feature_names)
+        
+        # Make prediction
+        prediction = model.predict(input_data)
+        
+        # Return prediction as JSON response
+        return jsonify({'prediction': prediction.tolist()})
     
-    # Make prediction
-    prediction = model.predict(input_data)
-    
-    # Return prediction as JSON response
-    return jsonify({'prediction': prediction.tolist()})
+    except Exception as e:
+        error_message = f"An error occurred: {str(e)}"
+        return jsonify({'error': error_message}), 500  # 500 Internal Server Error
+
 
 if __name__ == '__main__':
     app.run(debug=True)
+
