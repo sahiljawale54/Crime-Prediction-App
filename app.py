@@ -6,11 +6,11 @@ import pickle
 app = Flask(__name__, static_url_path='/static')
 
 # Load the trained model
-with open('CrimePredictionModel.pkl', 'rb') as file:
+with open('Crime_prediction_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Define the feature names expected by the model
-feature_names = ['month', 'year', 'dayEncoded', 'hours', 'minutes', 'time_numeric', 'sessionEncoded', 'districtEncoded', 'locX', 'locY', 'descriptionEncoded']
+feature_names = ['month', 'year', 'dayEncoded',  'time_numeric', 'sessionEncoded', 'districtEncoded', 'locX', 'locY', 'descriptionEncoded']
 
 @app.route('/')
 def home():

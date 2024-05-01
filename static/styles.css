@@ -6,6 +6,7 @@ body {
   background-image: url("/static/images/tape.svg");
   background-size: auto;
   background-position: center;
+  font-weight: 600;
 }
 
 .container {
@@ -43,6 +44,7 @@ h1 {
 }
 
 .input-group label {
+  font-size: 25px;
   display: block;
   margin-bottom: 5px;
 }
@@ -54,6 +56,7 @@ h1 {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 18px;
 }
 
 .input-row {
@@ -82,44 +85,12 @@ button:hover {
   margin: 10px;
 }
 
-/* Custom styling for flatpickr time picker */
-/*.flatpickr-time {
-  width: 100%;
-  border: 1px solid #ced4da;
-  display: block;
-  border-radius: 0.25rem;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}*/
-
-/* Styling for flatpickr time picker dropdown */
-/* .flatpickr-time.flatpickr-dropdown {
-  background-color: #fff;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  padding: 0.5rem;
-  z-index: 9999;
-  position: absolute;
-}*/
-
-/* Styling for flatpickr time picker dropdown items */
-/* .flatpickr-time.flatpickr-dropdown div {
-  padding: 0.25rem 0;
-  cursor: pointer;
-} */
-
-/* Styling for flatpickr time picker dropdown items on hover */
-/* .flatpickr-time.flatpickr-dropdown div:hover {
-  background-color: #f8f9fa;
-} */
-
 #predictionResult {
-  font-size: medium;
+  font-size: 25px;
   font-weight: 600;
   margin-top: 20px;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -127,7 +98,7 @@ button:hover {
 
 #resetbutton {
   background-color: gray;
-} 
+}
 #map-message {
   padding: 10px;
   color: red;

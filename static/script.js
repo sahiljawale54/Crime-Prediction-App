@@ -125,8 +125,6 @@ document.getElementById("predictButton").addEventListener("click", function () {
     month: month,
     year: year,
     dayEncoded: dayEncoded,
-    hours: hours,
-    minutes: minutes,
     time_numeric: 3600 * hours + 60 * minutes,
     sessionEncoded: sessionEncoded,
     districtEncoded: districtEncoded,
@@ -155,6 +153,8 @@ document.getElementById("predictButton").addEventListener("click", function () {
         "Predicted Priority: " + priority;
     })
     .catch((error) => {
+      document.getElementById("predictionResult").innerText =
+        error;
       console.error("Error:", error);
     });
 });
