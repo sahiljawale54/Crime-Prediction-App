@@ -1,40 +1,32 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
-  background-image: url("/static/images/tape.svg");
-  background-size: auto;
-  background-position: center;
-  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #d4d3d398;
+  background-image: url("/static/images/BG.png");
+  
 }
 
 .container {
-  font-size: large;
-  width: 80vw;
+  width: 80%;
   margin-inline: auto;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.652);
 }
+
 .header {
+  font-size: 25px;
   display: flex;
   justify-content: center;
 }
+
 .robber {
   display: inline;
-  width: 100px;
-  height: auto;
-}
-h1 {
-  text-align: center;
-  display: inline;
+  width: 150px;
 }
 
 .half-size {
-  width: calc(50% - 50px); /* Adjust margin as needed */
-  margin-right: 10px;
+  width: calc(50% - 50px);
 }
 
 .input-group {
@@ -46,7 +38,7 @@ h1 {
 .input-group label {
   font-size: 25px;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .input-group select,
@@ -71,18 +63,19 @@ button {
   background-color: #4caf50;
   color: #fff;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 button:hover {
   background-color: #45a049;
 }
+
 #map {
-  height: 400px;
-  width: 100%;
-  margin: 10px;
+  height: 500px;
+  width: 95%;
+  margin: 15px;
 }
 
 #predictionResult {
